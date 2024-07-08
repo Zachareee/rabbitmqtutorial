@@ -1,4 +1,4 @@
-package com.workQueues;
+package rabs;
 
 public class HostnameProvider {
     public final static String QUEUE_NAME = "Hello";
