@@ -1,0 +1,11 @@
+{
+    "java.project.sourcePaths": [
+        "src",
+    ],
+    "java.project.referencedLibraries": [
+        "c:\\Users\\zacha\\source\\repos\\rabbitmq\\libs\\amqp-client-5.16.0.jar",
+        "c:\\Users\\zacha\\source\\repos\\rabbitmq\\libs\\slf4j-api-1.7.36.jar",
+        "c:\\Users\\zacha\\source\\repos\\rabbitmq\\libs\\slf4j-simple-1.7.36.jar"
+    ],
+    "java.dependency.syncWithFolderExplorer": true
+}

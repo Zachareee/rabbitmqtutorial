@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "helloWorld Recv",
+            "request": "launch",
+            "mainClass": "com.helloWorld.Recv",
+            "projectName": "rabbitmq_67e320e7"
+        },
+        {
+            "type": "java",
+            "name": "helloWorld Send",
+            "request": "launch",
+            "mainClass": "com.helloWorld.Send",
+            "projectName": "rabbitmq_67e320e7"
+        },
+        {
+            "type": "java",
+            "name": "workQueues Recv",
+            "request": "launch",
+            "mainClass": "com.workQueues.Recv",
+            "projectName": "rabbitmq_67e320e7"
+        },
+        {
+            "type": "java",
+            "name": "workQueues Send",
+            "request": "launch",
+            "mainClass": "com.workQueues.Send",
+            "projectName": "rabbitmq_67e320e7"
+        }
+    ]
+}
