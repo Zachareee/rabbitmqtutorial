@@ -8,21 +8,22 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
-import rabs.HostnameProvider;
+import rabs.*;
 
 public class Send {
     public static void main(String[] args) throws IOException, TimeoutException {
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost(HostnameProvider.getHostname());
+        factory.setHost(VariableProvider.getVariable(EnvMap.hostname));
 
         try (Connection conn = factory.newConnection();
                 Channel channel = conn.createChannel();
                 Scanner sc = new Scanner(System.in)) {
-            channel.queueDeclare(HostnameProvider.QUEUE_NAME, false, false, false, null);
+            String queuename = VariableProvider.getVariable(EnvMap.queueName);
+            channel.queueDeclare(queuename, false, false, false, null);
 
             System.out.print("Type your message to send: ");
             String message = sc.nextLine();
-            channel.basicPublish("", HostnameProvider.QUEUE_NAME, null, message.getBytes());
+            channel.basicPublish("", queuename, null, message.getBytes());
             System.out.println(" [x] Sent '" + message + "'");
         }
     }

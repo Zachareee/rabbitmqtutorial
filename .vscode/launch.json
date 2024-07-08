@@ -12,28 +12,28 @@
         },
         {
             "type": "java",
-            "name": "helloWorld Recv",
+            "name": "helloWorld/Recv",
             "request": "launch",
             "mainClass": "com.helloWorld.Recv",
             "projectName": "rabbitmq_67e320e7"
         },
         {
             "type": "java",
-            "name": "helloWorld Send",
+            "name": "helloWorld/Send",
             "request": "launch",
             "mainClass": "com.helloWorld.Send",
             "projectName": "rabbitmq_67e320e7"
         },
         {
             "type": "java",
-            "name": "workQueues Recv",
+            "name": "workQueues/Recv",
             "request": "launch",
             "mainClass": "com.workQueues.Recv",
             "projectName": "rabbitmq_67e320e7"
         },
         {
             "type": "java",
-            "name": "workQueues Send",
+            "name": "workQueues/NewTask",
             "request": "launch",
             "mainClass": "com.workQueues.Send",
             "projectName": "rabbitmq_67e320e7"
