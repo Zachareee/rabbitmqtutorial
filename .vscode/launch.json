@@ -8,35 +8,45 @@
             "type": "java",
             "name": "Current File",
             "request": "launch",
-            "mainClass": "${file}"
+            "mainClass": "${file}",
+            "vmArgs": "-ea",
+            "envFile": "${workspaceFolder}/.env"
         },
         {
             "type": "java",
             "name": "helloWorld/Recv",
             "request": "launch",
-            "mainClass": "com.helloWorld.Recv",
-            "projectName": "rabbitmq_67e320e7"
+            "mainClass": "rabs.helloWorld.Recv",
+            "projectName": "rabbitmq_67e320e7",
+            "vmArgs": "-ea",
+            "envFile": "${workspaceFolder}/.env"
         },
         {
             "type": "java",
             "name": "helloWorld/Send",
             "request": "launch",
-            "mainClass": "com.helloWorld.Send",
-            "projectName": "rabbitmq_67e320e7"
+            "mainClass": "rabs.helloWorld.Send",
+            "projectName": "rabbitmq_67e320e7",
+            "vmArgs": "-ea",
+            "envFile": "${workspaceFolder}/.env"
         },
         {
             "type": "java",
-            "name": "workQueues/Recv",
+            "name": "workQueues/Worker",
             "request": "launch",
-            "mainClass": "com.workQueues.Recv",
-            "projectName": "rabbitmq_67e320e7"
+            "mainClass": "rabs.workQueues.Worker",
+            "projectName": "rabbitmq_67e320e7",
+            "vmArgs": "-ea",
+            "envFile": "${workspaceFolder}/.env"
         },
         {
             "type": "java",
             "name": "workQueues/NewTask",
             "request": "launch",
-            "mainClass": "com.workQueues.Send",
-            "projectName": "rabbitmq_67e320e7"
+            "mainClass": "rabs.workQueues.NewTask",
+            "projectName": "rabbitmq_67e320e7",
+            "vmArgs": "-ea",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
