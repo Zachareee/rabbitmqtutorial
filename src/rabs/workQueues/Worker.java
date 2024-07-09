@@ -18,7 +18,7 @@ public class Worker {
         Channel channel = connection.createChannel();
 
         String queuename = VariableProvider.getVariable(EnvMap.queueName);
-        channel.queueDeclare(queuename, false, false, false, null);
+        channel.queueDeclare(queuename, true, false, false, null);
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
 
         channel.basicQos(1);
