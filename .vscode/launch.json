@@ -48,5 +48,12 @@
             "vmArgs": "-ea",
             "envFile": "${workspaceFolder}/.env"
         }
+    ],
+    "compounds": [
+        {
+            "name": "Compound/Queues",
+            "configurations": ["workQueues/Worker", "workQueues/Worker", "workQueues/Worker", "workQueues/NewTask"],
+            "stopAll": true
+        }
     ]
 }
