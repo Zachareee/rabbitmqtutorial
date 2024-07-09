@@ -52,7 +52,7 @@
     "compounds": [
         {
             "name": "Compound/Queues",
-            "configurations": ["workQueues/Worker", "workQueues/Worker", "workQueues/Worker", "workQueues/NewTask"],
+            "configurations": ["workQueues/Worker", "workQueues/Worker", "workQueues/NewTask"],
             "stopAll": true
         }
     ]
