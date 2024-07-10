@@ -112,6 +112,51 @@
                 "order": 3
             }
         },
+        {
+            "type": "java",
+            "name": "Emit",
+            "request": "launch",
+            "mainClass": "rabs.routing.Emit",
+            "projectName": "rabbitmq_67e320e7",
+            "vmArgs": "-ea",
+            "envFile": "${workspaceFolder}/.env",
+            "args": "file",
+            "presentation": {
+                "hidden": false,
+                "group": "emit",
+                "order": 1
+            }
+        },
+        {
+            "type": "java",
+            "name": "SubmitRedGreen",
+            "request": "launch",
+            "mainClass": "rabs.routing.Submit",
+            "projectName": "rabbitmq_67e320e7",
+            "vmArgs": "-ea",
+            "envFile": "${workspaceFolder}/.env",
+            "args": "red green",
+            "presentation": {
+                "hidden": false,
+                "group": "emit",
+                "order": 2
+            }
+        },
+        {
+            "type": "java",
+            "name": "SubmitOrangeGreen",
+            "request": "launch",
+            "mainClass": "rabs.routing.Submit",
+            "projectName": "rabbitmq_67e320e7",
+            "vmArgs": "-ea",
+            "envFile": "${workspaceFolder}/.env",
+            "args": "orange green",
+            "presentation": {
+                "hidden": false,
+                "group": "emit",
+                "order": 3
+            }
+        }
     ],
     "compounds": [
         {
@@ -132,6 +177,16 @@
                 "hidden": false,
                 "group": "compound",
                 "order": 2
+            }
+        },
+        {
+            "name": "Compound/Routing",
+            "configurations": ["Emit", "SubmitOrangeGreen", "SubmitRedGreen"],
+            "stopAll": true,
+            "presentation": {
+                "hidden": false,
+                "group": "compound",
+                "order": 3
             }
         }
     ]

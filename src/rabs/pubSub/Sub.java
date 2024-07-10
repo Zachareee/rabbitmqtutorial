@@ -22,7 +22,7 @@ public class Sub {
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
 
         DeliverCallback callback = (consumerTag, delivery) -> {
-            logMethod(args[0]).accept(new String(delivery.getBody()));
+            logMethod(args[0]).accept(new String(delivery.getBody(), "UTF-8"));
         };
         channel.basicConsume(queueName, true, callback, consumertag -> {
         });
