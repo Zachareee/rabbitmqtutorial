@@ -10,50 +10,129 @@
             "request": "launch",
             "mainClass": "${file}",
             "vmArgs": "-ea",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
         },
         {
             "type": "java",
-            "name": "helloWorld/Recv",
+            "name": "Recv",
             "request": "launch",
             "mainClass": "rabs.helloWorld.Recv",
             "projectName": "rabbitmq_67e320e7",
             "vmArgs": "-ea",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "presentation": {
+                "hidden": false,
+                "group": "helloWorld",
+                "order": 2
+            }
         },
         {
             "type": "java",
-            "name": "helloWorld/Send",
+            "name": "Send",
             "request": "launch",
             "mainClass": "rabs.helloWorld.Send",
             "projectName": "rabbitmq_67e320e7",
             "vmArgs": "-ea",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "presentation": {
+                "hidden": false,
+                "group": "helloWorld",
+                "order": 1
+            }
         },
         {
             "type": "java",
-            "name": "workQueues/Worker",
+            "name": "Worker",
             "request": "launch",
             "mainClass": "rabs.workQueues.Worker",
             "projectName": "rabbitmq_67e320e7",
             "vmArgs": "-ea",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "presentation": {
+                "hidden": false,
+                "group": "queues",
+                "order": 2
+            }
         },
         {
             "type": "java",
-            "name": "workQueues/NewTask",
+            "name": "NewTask",
             "request": "launch",
             "mainClass": "rabs.workQueues.NewTask",
             "projectName": "rabbitmq_67e320e7",
             "vmArgs": "-ea",
-            "envFile": "${workspaceFolder}/.env"
-        }
+            "envFile": "${workspaceFolder}/.env",
+            "presentation": {
+                "hidden": false,
+                "group": "queues",
+                "order": 1
+            }
+        },
+        {
+            "type": "java",
+            "name": "Pub",
+            "request": "launch",
+            "mainClass": "rabs.pubSub.Pub",
+            "projectName": "rabbitmq_67e320e7",
+            "vmArgs": "-ea",
+            "envFile": "${workspaceFolder}/.env",
+            "presentation": {
+                "hidden": false,
+                "group": "pubsub",
+                "order": 1
+            }
+        },
+        {
+            "type": "java",
+            "name": "SubPrint",
+            "request": "launch",
+            "mainClass": "rabs.pubSub.Sub",
+            "projectName": "rabbitmq_67e320e7",
+            "vmArgs": "-ea",
+            "envFile": "${workspaceFolder}/.env",
+            "args": "print",
+            "presentation": {
+                "hidden": false,
+                "group": "pubsub",
+                "order": 2
+            }
+        },
+        {
+            "type": "java",
+            "name": "SubLogs",
+            "request": "launch",
+            "mainClass": "rabs.pubSub.Sub",
+            "projectName": "rabbitmq_67e320e7",
+            "vmArgs": "-ea",
+            "envFile": "${workspaceFolder}/.env",
+            "args": "file",
+            "presentation": {
+                "hidden": false,
+                "group": "pubsub",
+                "order": 3
+            }
+        },
     ],
     "compounds": [
         {
             "name": "Compound/Queues",
-            "configurations": ["workQueues/Worker", "workQueues/Worker", "workQueues/NewTask"],
+            "configurations": ["Worker", "Worker", "NewTask"],
+            "presentation": {
+                "hidden": false,
+                "group": "compound",
+                "order": 1
+            },
             "stopAll": true
+        },
+        {
+            "name": "Compound/PubSub",
+            "configurations": ["Pub", "SubPrint", "SubLogs"],
+            "stopAll": true,
+            "presentation": {
+                "hidden": false,
+                "group": "compound",
+                "order": 2
+            }
         }
     ]
 }
