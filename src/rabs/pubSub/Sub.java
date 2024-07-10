@@ -6,22 +6,15 @@ import java.util.concurrent.TimeoutException;
 import java.util.function.Consumer;
 
 import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.DeliverCallback;
 
 import rabs.*;
 
 public class Sub {
     public static void main(String[] args) throws IOException, TimeoutException {
-        System.out.println(args[0]);
-        ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost(VariableProvider.getVariable(EnvMap.hostname));
+        Channel channel = ChannelMaker.getInstance().newChannel();
+
         String exchangeName = VariableProvider.getVariable(EnvMap.exchangeName);
-
-        Connection conn = factory.newConnection();
-        Channel channel = conn.createChannel();
-
         channel.exchangeDeclare(exchangeName, "fanout");
         String queueName = channel.queueDeclare().getQueue();
         channel.queueBind(queueName, exchangeName, "");
