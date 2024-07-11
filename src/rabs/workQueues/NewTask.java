@@ -2,8 +2,6 @@ package rabs.workQueues;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
-import java.util.function.Consumer;
-import java.util.Scanner;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;

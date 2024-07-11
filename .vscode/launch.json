@@ -156,12 +156,60 @@
                 "group": "emit",
                 "order": 3
             }
+        },
+        {
+            "type": "java",
+            "name": "EmitTopic",
+            "request": "launch",
+            "mainClass": "rabs.topics.EmitTopic",
+            "projectName": "rabbitmq_67e320e7",
+            "vmArgs": "-ea",
+            "envFile": "${workspaceFolder}/.env",
+            "presentation": {
+                "hidden": false,
+                "group": "topic",
+                "order": 1
+            }
+        },
+        {
+            "type": "java",
+            "name": "RecvTopic startLaugh",
+            "request": "launch",
+            "mainClass": "rabs.topics.RecvTopic",
+            "projectName": "rabbitmq_67e320e7",
+            "vmArgs": "-ea",
+            "envFile": "${workspaceFolder}/.env",
+            "args": "Laugh.#",
+            "presentation": {
+                "hidden": false,
+                "group": "topic",
+                "order": 2
+            }
+        },
+        {
+            "type": "java",
+            "name": "RecvTopic secondargHi",
+            "request": "launch",
+            "mainClass": "rabs.topics.RecvTopic",
+            "projectName": "rabbitmq_67e320e7",
+            "vmArgs": "-ea",
+            "envFile": "${workspaceFolder}/.env",
+            "args": "*.Hi.*",
+            "presentation": {
+                "hidden": false,
+                "group": "topic",
+                "order": 3
+            }
         }
     ],
     "compounds": [
         {
             "name": "Compound/Queues",
-            "configurations": ["Worker", "Worker", "NewTask"],
+            "configurations": [
+                "Worker",
+                "Worker",
+                "NewTask"
+            ],
             "presentation": {
                 "hidden": false,
                 "group": "compound",
@@ -171,7 +219,11 @@
         },
         {
             "name": "Compound/PubSub",
-            "configurations": ["Pub", "SubPrint", "SubLogs"],
+            "configurations": [
+                "Pub",
+                "SubPrint",
+                "SubLogs"
+            ],
             "stopAll": true,
             "presentation": {
                 "hidden": false,
@@ -181,12 +233,30 @@
         },
         {
             "name": "Compound/Routing",
-            "configurations": ["Emit", "SubmitOrangeGreen", "SubmitRedGreen"],
+            "configurations": [
+                "Emit",
+                "SubmitOrangeGreen",
+                "SubmitRedGreen"
+            ],
             "stopAll": true,
             "presentation": {
                 "hidden": false,
                 "group": "compound",
                 "order": 3
+            }
+        },
+        {
+            "name": "Compound/Topics",
+            "configurations": [
+                "EmitTopic",
+                "RecvTopic startLaugh",
+                "RecvTopic secondargHi"
+            ],
+            "stopAll": true,
+            "presentation": {
+                "hidden": false,
+                "group": "compound",
+                "order": 4
             }
         }
     ]
